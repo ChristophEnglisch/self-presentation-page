@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  app:
+    build:
+      context: app
+      dockerfile: Dockerfile.dev
+    volumes:
+      - './app:/app'
+      - '/app/node_modules'
+    ports:
+      - 8080:8080
