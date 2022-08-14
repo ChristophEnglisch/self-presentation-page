@@ -1,18 +1,34 @@
 <template>
-  <hello-world />
+  <AboutMe id="about"/>
+  <Projects id="projects"/>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {Options, Vue} from "vue-class-component";
+import AboutMe from "@/components/AboutMe.vue";
+import Projects from "@/components/Projects.vue";
 
-// Components
-import HelloWorld from '../components/HelloWorld.vue';
 
-export default defineComponent({
+@Options({
   name: 'HomeView',
+  components: {Projects, AboutMe}
+})
+export default class HomeView extends Vue {
 
-  components: {
-    HelloWorld,
-  },
-});
+  private items = [
+    'About Me', 'Projects', 'Blog', 'Skills',
+  ]
+
+  private text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+
+  private scrollToElement(element) {
+    const el = document.getElementById(element);
+    el.scrollIntoView({behavior: "smooth"});
+  }
+  /*@Watch('tab')
+  private onTabChanged(oldVal : any, newVal : any) : void {
+
+  }*/
+
+}
 </script>
