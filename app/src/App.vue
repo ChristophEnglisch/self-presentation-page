@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-scroll.self="onScroll">
     <v-navigation-drawer app>
       <v-list
           dense
