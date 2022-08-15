@@ -57,6 +57,11 @@ export default class HomeView extends Vue {
       name: 'Blog',
       icon: 'mdi-forum'
     },
+    {
+      id: 'contact',
+      name: 'Contact',
+      icon: 'mdi-forum'
+    },
   ]
 
   private scrollToElement(element) {
