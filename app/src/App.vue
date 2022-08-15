@@ -6,31 +6,22 @@
           rounded
       >
         <v-list-item
+            v-for="page in pages"
+            v-bind:key="page.id"
             link
-            @click="scrollToElement('about')"
+            @click="scrollToElement(page.id)"
         >
           <v-list-item-icon>
-            <v-icon>mdi-forum</v-icon>
+            <v-icon>{{page.icon}}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>About Me</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item
-            link
-            @click="scrollToElement('projects')"
-        >
-          <v-list-item-icon>
-            <v-icon>mdi-forum</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>Projekte</v-list-item-title>
+            <v-list-item-title>{{page.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
     <v-main>
       <v-container fluid>
         <router-view/>
@@ -50,8 +41,22 @@ import {Options, Vue} from "vue-class-component";
 })
 export default class HomeView extends Vue {
 
-  private items = [
-    'About Me', 'Projects', 'Blog', 'Skills',
+  private pages = [
+    {
+      id: 'about',
+      name: 'About Me',
+      icon: 'mdi-forum'
+    },
+    {
+      id: 'projects',
+      name: 'Projects',
+      icon: 'mdi-forum'
+    },
+    {
+      id: 'blog',
+      name: 'Blog',
+      icon: 'mdi-forum'
+    },
   ]
 
   private scrollToElement(element) {
