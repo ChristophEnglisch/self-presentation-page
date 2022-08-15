@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
-    Christoph Englisch
-    Fullstack Developer
+    Christoph Englisch,
+    Fullstack Webdeveloper
   </v-container>
 </template>
 
