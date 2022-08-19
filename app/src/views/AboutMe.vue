@@ -9,7 +9,6 @@
 
 <script lang="ts">
 import {Options, Vue} from 'vue-class-component'
-import Projects from "@/views/Projects.vue";
 
 @Options({
   name: 'AboutMe'
