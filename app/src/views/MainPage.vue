@@ -5,8 +5,8 @@
 
 <script lang="ts">
 import {Options, Vue} from "vue-class-component";
-import AboutMe from "@/components/AboutMe.vue";
-import Projects from "@/components/Projects.vue";
+import Projects from "@/views/Projects.vue";
+import AboutMe from "@/views/AboutMe.vue";
 
 
 @Options({
@@ -25,10 +25,10 @@ export default class HomeView extends Vue {
     const el = document.getElementById(element);
     el.scrollIntoView({behavior: "smooth"});
   }
-  /*@Watch('tab')
-  private onTabChanged(oldVal : any, newVal : any) : void {
+    /*@Watch('tab')
+    private onTabChanged(oldVal : any, newVal : any) : void {
 
-  }*/
+    }*/
 
 }
 </script>

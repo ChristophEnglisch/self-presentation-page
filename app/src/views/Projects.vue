@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    Projects
     <iframe
         src="https://obstbau-rech.de/"
         height="800"
@@ -13,7 +12,9 @@
 <script lang="ts">
 import {Options, Vue} from "vue-class-component";
 
-@Options()
+@Options({
+  name: 'AboutMe'
+})
 export default class Projects extends Vue {
 
 }
