@@ -11,9 +11,8 @@
 import {Options, Vue} from 'vue-class-component'
 
 @Options({
-  name: 'AboutMe'
+  name: 'AboutMe',
 })
 export default class AboutMe extends Vue {
-
 }
 </script>

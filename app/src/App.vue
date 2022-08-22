@@ -64,8 +64,11 @@ export default class HomeView extends Vue {
     },
   ]
 
-  private scrollToElement(element) {
+  private scrollToElement(element: string) {
     const el = document.getElementById(element);
+    if (el == null){
+      return;
+    }
     el.scrollIntoView({behavior: "smooth"});
   }
 }
