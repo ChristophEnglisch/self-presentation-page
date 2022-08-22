@@ -14,24 +14,17 @@ import vScrolls from "@/scroll/ScrollDirective";
   components: {Projects, AboutMe},
   directives: {
     'scrolls' : vScrolls,
-
   }
 })
 export default class MainPage extends Vue {
 
   private text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 
-/*  private scrollToElement(element: HTMLElement) {
-    const el = document.getElementById(element);
-    el.scrollIntoView({behavior: "smooth"});
-  }*/
-
   created(){
-    console.log(document.getElementById('test'))
   }
 
   mounted(){
-    console.log('test')
+
   }
 }
 </script>

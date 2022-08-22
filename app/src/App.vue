@@ -1,5 +1,5 @@
 <template>
-  <v-app v-scroll.self="onScroll">
+  <v-app>
     <v-navigation-drawer app>
       <v-list
           dense
@@ -35,6 +35,8 @@
 
 <script lang="ts">
 import {Options, Vue} from "vue-class-component";
+import {el} from "vuetify/locale";
+import ScrollHandler from "@/scroll/ScrollHandler";
 
 @Options({
   name: 'App',
@@ -70,6 +72,12 @@ export default class HomeView extends Vue {
       return;
     }
     el.scrollIntoView({behavior: "smooth"});
+  }
+
+  private currentTab = 'about'
+
+  private mounted(){
+    ScrollHandler
   }
 }
 </script>
