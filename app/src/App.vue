@@ -9,7 +9,7 @@
             v-for="page in pages"
             v-bind:key="page.id"
             link
-            @click="scrollToElement(page.id)"
+            @click="(page.id)"
         >
           <v-list-item-icon>
             <v-icon>{{page.icon}}</v-icon>
@@ -35,15 +35,18 @@
 
 <script lang="ts">
 import {Options, Vue} from "vue-class-component";
-import {el} from "vuetify/locale";
 import ScrollHandler from "@/scroll/ScrollHandler";
+import ScrollToHandler from "@/scroll/ScrollToHandler";
+import {Pages} from "@/model/Pages";
 
 @Options({
   name: 'App',
 })
-export default class HomeView extends Vue {
+export default class App extends Vue {
 
-  private pages = [
+  private scrollToHandler = new ScrollToHandler(this.pages)
+
+  private pages : Array<Pages> = [
     {
       id: 'about',
       name: 'About Me',
@@ -66,18 +69,10 @@ export default class HomeView extends Vue {
     },
   ]
 
-  private scrollToElement(element: string) {
-    const el = document.getElementById(element);
-    if (el == null){
-      return;
-    }
-    el.scrollIntoView({behavior: "smooth"});
-  }
-
-  private currentTab = 'about'
-
   private mounted(){
-    ScrollHandler
+    const scrollHandler = new ScrollHandler(
+        new ScrollToHandler({})
+    )
   }
 }
 </script>
