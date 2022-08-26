@@ -16,17 +16,18 @@ class ScrollToHandler
     }
 
     public scrollToNextPage(scrollDirection: ScrollDirection) : void {
-        if (scrollDirection === ScrollDirection.UP && this.pages.length < this.currentPageIndex) {
+        if (scrollDirection === ScrollDirection.DOWN) {
             this.currentPageIndex++
         }
-        if (scrollDirection === ScrollDirection.DOWN && this.currentPageIndex != 0) {
+        if (scrollDirection === ScrollDirection.UP) {
             this.currentPageIndex--
         }
-        this.scrollToElement(this.pages[this.currentPageIndex].id)
+        console.log(this.currentPageIndex)
+        this.scrollToElement(this.pages[this.currentPageIndex])
     }
 
-    private scrollToElement(element: string) : void {
-        const el = document.getElementById(element);
+    public scrollToElement(element: Pages) : void {
+        const el = document.getElementById(element.id);
         if (el == null) {
             return;
         }

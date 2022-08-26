@@ -8,8 +8,7 @@
         <v-list-item
             v-for="page in pages"
             v-bind:key="page.id"
-            link
-            @click="(page.id)"
+            @click="scrollToHandler.scrollToElement(page)"
         >
           <v-list-item-icon>
             <v-icon>{{page.icon}}</v-icon>
