@@ -1,7 +1,7 @@
 <template>
-  <v-container id="blog">
-
-  </v-container>
+  <div>
+    empty
+  </div>
 </template>
 
 <script lang="ts">

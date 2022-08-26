@@ -26,8 +26,5 @@ import Page from "@/components/Page.vue";
   name: 'MainPage',
   components: {Page, Projects, AboutMe},
 })
-export default class MainPage extends Vue {
-
-  private text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-}
+export default class MainPage extends Vue {}
 </script>

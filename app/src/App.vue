@@ -1,35 +1,13 @@
 <template>
-  <v-app>
-    <v-navigation-drawer app>
-      <v-list
-          dense
-          rounded
-      >
-        <v-list-item
-            v-for="page in pages"
-            v-bind:key="page.id"
-            @click="scrollToHandler.scrollToElement(page)"
-        >
-          <v-list-item-icon>
-            <v-icon>{{page.icon}}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{page.name}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-main>
-      <v-container fluid>
-        <router-view/>
-      </v-container>
-    </v-main>
-
-    <v-footer app>
-    </v-footer>
-  </v-app>
+  <div v-for="page in pages"
+       v-bind:key="page.id"
+       @click="scrollToHandler.scrollToElement(page)">
+    {{ page.icon }}
+    {{ page.name }}
+  </div>
+  <div id="main">
+    <router-view/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -45,7 +23,7 @@ export default class App extends Vue {
 
   private scrollToHandler = new ScrollToHandler(this.pages)
 
-  private pages : Array<Pages> = [
+  private pages: Array<Pages> = [
     {
       id: 'about',
       name: 'About Me',
@@ -68,7 +46,7 @@ export default class App extends Vue {
     },
   ]
 
-  private mounted(){
+  private mounted() {
     const scrollHandler = new ScrollHandler(
         new ScrollToHandler(this.pages)
     )

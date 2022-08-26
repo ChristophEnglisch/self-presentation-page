@@ -1,12 +1,12 @@
 <template>
-  <v-container>
+  <div>
     <iframe
         src="https://obstbau-rech.de/"
         height="800"
         width="1200"
         title="description"
     />
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">

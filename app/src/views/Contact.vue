@@ -1,8 +1,8 @@
 <template>
-  <v-container id="contact">
+  <div id="contact">
     Christoph Englisch
     englisch.ch@gmail.com
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">

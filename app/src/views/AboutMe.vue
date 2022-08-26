@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <div>
     <h1>
       Christoph Englisch,
       Fullstack Webdeveloper
     </h1>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">
