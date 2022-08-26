@@ -1,5 +1,5 @@
 <template>
-  <div class="page" style="height: 100vh; display: flex;">
+  <div class="page">
     <slot name="page"></slot>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default class Page extends Vue {
 </script>
 <style>
 .page {
-
+  height: 100vh;
+  width: 100%;
 }
 </style>

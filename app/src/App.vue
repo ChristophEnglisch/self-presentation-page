@@ -1,12 +1,14 @@
 <template>
-  <div v-for="page in pages"
-       v-bind:key="page.id"
-       @click="scrollToHandler.scrollToElement(page)">
-    {{ page.icon }}
-    {{ page.name }}
-  </div>
-  <div id="main">
-    <router-view/>
+  <div>
+    <div v-for="page in pages"
+         v-bind:key="page.id"
+         @click="scrollToHandler.scrollToElement(page)">
+      {{ page.icon }}
+      {{ page.name }}
+    </div>
+    <div id="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
