@@ -21,10 +21,10 @@ class ScrollToHandler
         if (this.isMoving){
             return
         }
-        if (scrollDirection === ScrollDirection.DOWN) {
+        if (scrollDirection === ScrollDirection.DOWN && this.currentPageIndex < this.pages.length) {
             this.currentPageIndex++
         }
-        if (scrollDirection === ScrollDirection.UP) {
+        if (scrollDirection === ScrollDirection.UP && this.currentPageIndex > 0) {
             this.currentPageIndex--
         }
         console.log(this.currentPageIndex)
@@ -36,7 +36,7 @@ class ScrollToHandler
         setTimeout(
             () => {
                 this.isMoving = false
-            }, 400
+            }, 900
         )
     }
 
