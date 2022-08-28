@@ -7,11 +7,7 @@ class ScrollHandler
 
     private scrollToHandler: ScrollToHandler;
 
-    private lastPosition = 0
-
     private direction : ScrollDirection = ScrollDirection.DOWN
-
-    private counter = 0
 
     constructor(scrollToHandler : ScrollToHandler) {
         this.scrollToHandler = scrollToHandler;
@@ -27,22 +23,22 @@ class ScrollHandler
         )
     }
 
-    private handleScroll() {
-        const currentScrollDirection = this.determineDirection
-        if (currentScrollDirection == this.direction) {
-            this.counter++
-        } else {
-            this.counter = 0
-        }
-        if (this.counter >= this.moveCount){
+    private handleScroll(e: WheelEvent) {
+        const currentScrollDirection = this.determineDirection(e)
+        if (currentScrollDirection !== ScrollDirection.NONE){
             this.scrollToHandler.scrollToNextPage(this.direction)
-            this.counter = 0
         }
         this.direction = currentScrollDirection
-        this.lastPosition = window.scrollY
     }
 
-    public get determineDirection() : ScrollDirection {
-        return window.scrollY > this.lastPosition ? ScrollDirection.DOWN : ScrollDirection.UP;
+    private determineDirection(wheelEvent: WheelEvent) : ScrollDirection {
+        if (wheelEvent.deltaY > 30){
+            return ScrollDirection.DOWN
+        }
+        if (wheelEvent.deltaY < -30){
+            return ScrollDirection.UP
+        }
+        return ScrollDirection.NONE;
     }
+
 } export default ScrollHandler
